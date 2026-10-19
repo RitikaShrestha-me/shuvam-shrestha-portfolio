@@ -1,0 +1,3172 @@
+<!doctype html>
+<html lang="en" class="js">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Shuvam Shrestha · AI Product Management &amp; Data Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="vendor/three.min.js"></script>
+  </head>
+  <body>
+    <canvas id="ai" aria-hidden="true"></canvas>
+    <div id="cover" aria-label="Introduction">
+      <a class="skip" href="#sPath" id="skipIntro">Skip introduction</a>
+      <nav class="sdots" aria-label="Introduction sections">
+        <a href="#sWelcome" title="Welcome"><span class="sr">Welcome</span></a
+        ><a href="#sInterest" title="Your interests"
+          ><span class="sr">Your interests</span></a
+        ><a href="#sProjects" title="Projects"
+          ><span class="sr">Projects</span></a
+        ><a href="#sStory" title="My story"><span class="sr">My story</span></a
+        ><a href="#sPath" title="Where to next"
+          ><span class="sr">Where to next</span></a
+        >
+      </nav>
+
+      <div class="stage" id="stage">
+        <section class="ss fc cur" id="sWelcome" data-anim="zoom" data-tap>
+          <div class="sw">
+            <p class="kick sv">Shuvam Shrestha</p>
+            <h1 id="cvT" class="sv">Hey, I’m Shuvam.</h1>
+            <p class="q sv">
+              What brings you to this little corner of the internet?
+            </p>
+            <p class="lede sv">
+              Exploring the space between business, data, AI and ideas worth
+              building.
+            </p>
+          </div>
+          <div class="portrait sv">
+            <img
+              id="portraitImg"
+              src="assets/photo.png"
+              alt="Portrait of Shuvam Shrestha"
+              decoding="async"
+            />
+          </div>
+          <a class="scrollcue" href="#sInterest"
+            ><span>Click, scroll or swipe to continue</span><i></i
+          ></a>
+        </section>
+
+        <section class="ss fc" id="sInterest" data-anim="rise">
+          <div class="sw">
+            <h2 class="q sv">What are you curious about?</h2>
+            <p class="lede sv">
+              Pick one to shape what you see next. You can change it any time,
+              or keep scrolling without choosing.
+            </p>
+            <fieldset class="themes sv">
+              <legend class="sr">Choose an interest</legend>
+              <label
+                ><input type="radio" name="interest" value="ai" /><span
+                  class="tc"
+                  ><small>01</small><b>AI &amp; intelligent systems</b
+                  ><span>Agents, automation and models that act.</span></span
+                ></label
+              >
+              <label
+                ><input type="radio" name="interest" value="data" /><span
+                  class="tc"
+                  ><small>02</small><b>Data &amp; experimentation</b
+                  ><span>Dashboards, risk and sensing the world.</span></span
+                ></label
+              >
+              <label
+                ><input type="radio" name="interest" value="product" /><span
+                  class="tc"
+                  ><small>03</small><b>Products &amp; innovation</b
+                  ><span>Turning an idea into something people use.</span></span
+                ></label
+              >
+            </fieldset>
+            <p id="iStatus" class="lede" role="status"></p>
+          </div>
+        </section>
+
+        <section class="ss fc" id="sProjects" data-anim="slide">
+          <div class="sw">
+            <h2 class="q sv">
+              What happens when curiosity meets a real problem?
+            </h2>
+            <p class="lede sv" id="pLead"></p>
+            <div class="sps" id="sps" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section class="ss fc" id="sStory" data-anim="wipe" data-tap>
+          <div class="sw">
+            <h2 class="q sv">What connects business, technology and people?</h2>
+            <p class="lede sv">
+              I come from the business side: bancassurance, marketing and an MBA
+              in Finance, then IT project management. Now I’m adding the data
+              and AI side through a dual master’s at AIT and Télécom SudParis,
+              with one aim: building AI products.
+            </p>
+            <ol class="tl">
+              <li class="sv">
+                <b>Bancassurance &amp; marketing</b
+                ><span
+                  >National Life Insurance and Mid-Valley College, 2018–22</span
+                >
+              </li>
+              <li class="sv" style="transition-delay: 0.12s">
+                <b>MBA in Finance</b><span>Purbanchal University, 2020–24</span>
+              </li>
+              <li class="sv" style="transition-delay: 0.24s">
+                <b>Project management</b
+                ><span>Webpoint Solutions, 2024–25</span>
+              </li>
+              <li class="sv" style="transition-delay: 0.36s">
+                <b>Data science &amp; AI</b
+                ><span>AIT 2025, then Télécom SudParis 2026</span>
+              </li>
+              <li class="sv" style="transition-delay: 0.48s">
+                <b>AI products</b><span>The direction I’m building toward</span>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="ss fc" id="sPath" data-anim="depth">
+          <div class="sw">
+            <h2 class="q sv" tabindex="-1">
+              Where would you like to go from here?
+            </h2>
+            <div class="pick sv" id="pick">
+              <button id="bGuest" type="button">
+                <small>GUEST</small><b>I’m just exploring</b
+                ><span
+                  >Discover my projects, experiments, interests, and
+                  ideas.</span
+                ><em>Explore the portfolio →</em>
+              </button>
+              <button id="bRec" type="button">
+                <small>RECRUITER</small><b>I’m interested in working together</b
+                ><span
+                  >Explore my CV, selected projects, experience, and
+                  professional background.</span
+                ><em>View my professional profile →</em>
+              </button>
+            </div>
+            <form id="recForm" hidden novalidate>
+              <p class="lede">
+                Tell me who is visiting, so I know who is viewing my
+                professional profile. The guest route needs nothing.
+              </p>
+              <label
+                >Full name<input
+                  id="rName"
+                  type="text"
+                  autocomplete="name"
+                  required /></label
+              ><label
+                >Company<input
+                  id="rCo"
+                  type="text"
+                  autocomplete="organization"
+                  required /></label
+              ><label
+                >Email<input
+                  id="rMail"
+                  type="email"
+                  autocomplete="email"
+                  required
+              /></label>
+              <p id="rErr" role="alert"></p>
+              <div class="frow">
+                <button class="send" type="button" id="rBack">Back</button
+                ><button class="send go" type="submit">
+                  View my professional profile
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+      <p class="sr" id="fLive" role="status"></p>
+      <span class="sr" id="fCount"></span>
+      <div class="fctl">
+        <button
+          type="button"
+          class="fbtn"
+          id="fPrev"
+          aria-label="Previous card"
+        >
+          ← Back</button
+        ><button type="button" class="fbtn" id="fNext" aria-label="Next card">
+          Next →
+        </button>
+      </div>
+    </div>
+    <div class="wrap" id="app" inert>
+      <nav aria-label="Main">
+        <strong>Shuvam Shrestha</strong>
+        <ul>
+          <li><a href="#dash">Live</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="rec-only">
+            <button class="send" id="cvTop" type="button">Download CV</button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="heroWrap" id="heroWrap">
+        <header class="hero">
+          <div>
+            <div class="botStage">
+              <svg
+                id="bot"
+                viewBox="0 0 240 290"
+                role="img"
+                aria-label="Friendly robot assistant whose eyes and head follow your cursor"
+              >
+                <g id="body">
+                  <rect
+                    x="86"
+                    y="246"
+                    width="26"
+                    height="40"
+                    rx="10"
+                    fill="var(--soft)"
+                  />
+                  <rect
+                    x="128"
+                    y="246"
+                    width="26"
+                    height="40"
+                    rx="10"
+                    fill="var(--soft)"
+                  />
+                  <rect
+                    x="68"
+                    y="148"
+                    width="104"
+                    height="108"
+                    rx="32"
+                    fill="var(--ink)"
+                  />
+                  <rect
+                    x="94"
+                    y="174"
+                    width="52"
+                    height="38"
+                    rx="9"
+                    fill="var(--card)"
+                  />
+                  <circle cx="120" cy="193" r="8" fill="var(--teal)" />
+                  <rect
+                    x="36"
+                    y="156"
+                    width="26"
+                    height="78"
+                    rx="13"
+                    fill="var(--soft)"
+                  />
+                  <g class="wave">
+                    <rect
+                      x="178"
+                      y="156"
+                      width="26"
+                      height="78"
+                      rx="13"
+                      fill="var(--soft)"
+                    />
+                  </g>
+                </g>
+                <g id="head">
+                  <rect
+                    x="108"
+                    y="124"
+                    width="24"
+                    height="30"
+                    fill="var(--soft)"
+                  />
+                  <line
+                    x1="120"
+                    y1="26"
+                    x2="120"
+                    y2="50"
+                    stroke="var(--soft)"
+                    stroke-width="4"
+                  />
+                  <circle id="ant" cx="120" cy="22" r="8" fill="var(--gold)" />
+                  <circle cx="58" cy="92" r="9" fill="var(--gold)" />
+                  <circle cx="182" cy="92" r="9" fill="var(--gold)" />
+                  <rect
+                    x="64"
+                    y="48"
+                    width="112"
+                    height="88"
+                    rx="34"
+                    fill="var(--ink)"
+                  />
+                  <rect
+                    x="77"
+                    y="62"
+                    width="86"
+                    height="58"
+                    rx="24"
+                    fill="var(--paper)"
+                  />
+                  <g id="eyes">
+                    <circle
+                      cx="100"
+                      cy="88"
+                      r="12"
+                      fill="var(--card)"
+                      stroke="var(--line)"
+                      stroke-width="2"
+                    />
+                    <circle
+                      cx="140"
+                      cy="88"
+                      r="12"
+                      fill="var(--card)"
+                      stroke="var(--line)"
+                      stroke-width="2"
+                    />
+                    <circle id="pL" cx="100" cy="88" r="6" fill="var(--ink)" />
+                    <circle id="pR" cx="140" cy="88" r="6" fill="var(--ink)" />
+                  </g>
+                  <rect
+                    id="mouth"
+                    x="108"
+                    y="106"
+                    width="24"
+                    height="5"
+                    rx="2.5"
+                    fill="var(--teal)"
+                  />
+                </g>
+              </svg>
+              <div class="bubble" id="bubble" aria-live="polite">
+                Hi, I'm Shuvam's portfolio agent. Scroll down and I'll introduce
+                him.
+              </div>
+            </div>
+            <h1 aria-label="Talk to my portfolio. It talks back.">
+              <span class="w">Talk</span><span class="w">to</span
+              ><span class="w">my</span><span class="w">portfolio.</span
+              ><span class="w">It</span><span class="w">talks</span
+              ><span class="w">back.</span>
+            </h1>
+            <p class="lead rv">
+              I'm Shuvam, a dual-degree master's student moving from IT project
+              management, marketing and bancassurance into AI product
+              management. I'm open to internships from 1 February 2027. Instead
+              of reading about my work, ask for it out loud.
+            </p>
+            <div class="tags rv">
+              <span>AIT × Télécom SudParis</span><span>MBA Finance</span
+              ><span>Data Science &amp; AI</span
+              ><span>Open to internships · Feb 2027</span>
+            </div>
+          </div>
+
+          <div
+            class="console"
+            id="console"
+            role="region"
+            aria-label="Voice assistant"
+          >
+            <h2>Ask my portfolio agent</h2>
+            <small>Say "show me projects" or "what is your goal?"</small>
+            <div class="mic-row" id="micRow">
+              <button
+                id="mic"
+                aria-pressed="false"
+                aria-label="Start listening"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <rect x="9" y="3" width="6" height="12" rx="3" />
+                  <path d="M5 11a7 7 0 0 0 14 0M12 18v3" />
+                </svg>
+              </button>
+              <div class="bars" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+                ><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+            <div class="said" id="said" aria-live="polite">
+              Tap the mic and speak in English.
+            </div>
+            <div class="reply" id="reply" aria-live="polite">
+              Hi, I'm Shuvam's portfolio agent. I can answer questions and
+              scroll the page to what you want to see.
+            </div>
+            <div class="chips" id="chips"></div>
+            <form id="form">
+              <input
+                type="text"
+                id="typed"
+                placeholder="Or type a question"
+                aria-label="Type a question"
+              /><button class="send" type="submit">Ask</button>
+            </form>
+            <div class="opts">
+              <label
+                ><input type="checkbox" id="speak" checked /> Speak
+                answers</label
+              ><span id="status">Local agent</span>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <section id="dash">
+        <h2>Live from your visit</h2>
+        <div class="dgrid">
+          <div class="c">
+            <span class="l">Time on page</span><b id="mTime">0:00</b>
+          </div>
+          <div class="c">
+            <span class="l">Scroll depth</span><b id="mScroll">0%</b>
+            <div class="meter"><i id="mBar"></i></div>
+          </div>
+          <div class="c">
+            <span class="l">Questions asked</span><b id="mQ">0</b>
+          </div>
+          <div class="c">
+            <span class="l">Last agent reply</span><b id="mLat">-</b>
+          </div>
+          <div class="c s2">
+            <span class="l">Scroll depth, last 60 seconds</span
+            ><svg
+              id="spark"
+              viewBox="0 0 295 90"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <polyline
+                id="line"
+                fill="none"
+                stroke="var(--teal)"
+                stroke-width="2.5"
+                vector-effect="non-scaling-stroke"
+                points=""
+              />
+            </svg>
+          </div>
+          <div class="c s2">
+            <span class="l">Where your attention is</span>
+            <div id="att"></div>
+          </div>
+          <div class="c s2">
+            <span class="l">Time in the three places I work across</span>
+            <div class="clk" id="clk"></div>
+          </div>
+          <div class="c s2">
+            <span class="l">Voice agent</span
+            ><b id="vs" style="font-size: 26px">Mic idle</b>
+            <ul id="log">
+              <li>Questions you ask will appear here.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects, live on watch</h2>
+        <p class="mut">
+          One project is always on watch and switches every few seconds. Pick
+          any to pin it and follow its flow from input to outcome. The Job
+          Application Agent is a working demo.
+        </p>
+        <div class="pj">
+          <div class="pjq" id="pjq" role="tablist" aria-label="Projects"></div>
+          <div class="pjs" id="pjs" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="pack" class="rec-only">
+        <h2>Recruiter pack</h2>
+        <div class="tabs" role="tablist">
+          <button
+            role="tab"
+            id="tCv"
+            aria-selected="true"
+            aria-controls="tabCv"
+          >
+            CV and links</button
+          ><button
+            role="tab"
+            id="tPh"
+            aria-selected="false"
+            aria-controls="tabPh"
+          >
+            Photo collection
+          </button>
+        </div>
+        <div id="tabCv" role="tabpanel">
+          <p class="mut">
+            Download my CV, watch the demo video under each project, or reach me
+            on your preferred channel.
+          </p>
+          <p>
+            <button class="send big" id="cvBtn" type="button">
+              Download CV
+            </button>
+          </p>
+          <div class="soc">
+            <a id="sLi" target="_blank" rel="noopener">LinkedIn</a
+            ><a id="sIg" target="_blank" rel="noopener">Instagram</a
+            ><a id="sWa" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        <div id="tabPh" role="tabpanel" hidden>
+          <div id="phLock">
+            <p class="mut">
+              My professional photos are private. Request access and I get a
+              message on Telegram to approve it.
+            </p>
+            <p>
+              <button class="send big" id="phReq" type="button">
+                Request access
+              </button>
+            </p>
+          </div>
+          <p id="phSt" role="status" class="mut"></p>
+          <button class="send" id="phDemo" type="button" hidden>
+            Demo only: approve as owner
+          </button>
+          <div class="gal" id="gal"></div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>My story</h2>
+
+        <div
+          class="book"
+          id="book"
+          tabindex="0"
+          role="group"
+          aria-roledescription="book"
+          aria-label="About me, 3 pages. Use the left and right arrow keys to turn pages."
+        >
+          <article class="bpage" aria-label="Page 1">
+            <span class="stag">CHAPTER 01</span>
+            <h3>I started with business. Curiosity took me to technology.</h3>
+            <p>
+              My career began in bancassurance marketing at one of Nepal's
+              reputed insurance companies, where I worked with corporate banks
+              and business houses. The experience gave me an early understanding
+              of how businesses operate, how relationships shape markets, and
+              how products need to be positioned to create value. While pursuing
+              my MBA, I began looking beyond traditional business strategies. I
+              became increasingly interested in a question: How can data and
+              technology help businesses make better decisions, build better
+              products, and stay competitive? I started exploring on my own
+              through online courses, YouTube, and conversations with people
+              working in technology. What began as curiosity gradually became a
+              career shift. I moved into the IT industry, where my journey in
+              project management introduced me to software development,
+              cross-functional collaboration, and the process of turning
+              business requirements into working solutions. The more I learned
+              about technology, the more questions I wanted to explore. I
+              realised that I didn't just want to manage the development of
+              products; I wanted to understand the data, systems, and
+              intelligence behind them.
+            </p>
+            <div class="pfacts">
+              <span>Bancassurance Officer, 2018–19</span>
+              <span>Rs. 25M premiums across 10 bank branches</span>
+              <span>Associate Project Manager, 2024–25</span>
+            </div>
+            <span class="pno">1 / 3</span>
+          </article>
+
+          <article class="bpage" aria-label="Page 2">
+            <span class="stag">CHAPTER 02</span>
+            <h3>From managing projects to understanding data</h3>
+            <p>
+              That curiosity led me to pursue data science at the Asian
+              Institute of Technology (AIT) in Thailand, where I began building
+              my technical foundation in data science, machine learning, data
+              engineering, and analytics. Through the dual-degree opportunity, I
+              continued this journey at Télécom SudParis, Institut Polytechnique
+              de Paris, in France, pursuing an MSc in Data Science and Network
+              Intelligence. Moving across disciplines and countries has
+              challenged me to approach problems differently. My background in
+              business and finance helps me think about value, strategy, and
+              practical outcomes, while my technical studies allow me to explore
+              how data and intelligent systems can help create them.
+            </p>
+            <div class="pfacts">
+              <span>AIT, Thailand · Aug 2025 – present</span>
+              <span>Télécom SudParis, France · Sep 2026 – present</span>
+              <span>MBA Finance · Purbanchal University</span>
+            </div>
+            <span class="pno">2 / 3</span>
+          </article>
+
+          <article class="bpage" aria-label="Page 3">
+            <span class="stag">CHAPTER 03</span>
+            <h3>What I am working towards today</h3>
+            <p>
+              I am interested in the space where business problems meet data,
+              AI, and digital product development. I enjoy exploring how data
+              pipelines, machine learning, automation, and AI agents can move
+              beyond experimentation to solve practical problems. I bring a
+              perspective shaped by both sides: understanding why a business
+              needs a solution and learning how to build the technology that can
+              deliver it. I'm still learning, building, and testing ideas. For
+              me, the journey has never been about moving away from my original
+              background. It has been about adding new ways of thinking and new
+              tools to it.
+            </p>
+            <p>
+              I want to build technology that makes business decisions smarter,
+              products more useful, and complex problems easier to solve.
+            </p>
+            <div class="pfacts">
+              <span>AI Product Owner / AI PM internship</span>
+              <span>Available from 1 Feb 2027</span>
+              <span>Évry, France</span>
+            </div>
+            <span class="pno">3 / 3</span>
+          </article>
+        </div>
+
+        <div class="bctl">
+          <button class="send" id="bPrev" type="button">← Previous page</button>
+          <div class="bdots" id="bDots"></div>
+          <span class="sr" id="bCount" role="status">Page 1 of 3</span>
+          <button class="send" id="bNext" type="button">Next page →</button>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="rope-track" id="ropeTrack">
+          <div class="rope-stage" id="ropeStage">
+            <div class="beam" aria-hidden="true"></div>
+
+            <article class="rcard">
+              <span class="rrope l" aria-hidden="true"></span
+              ><span class="rrope r" aria-hidden="true"></span>
+              <small>ROLE 1 / 3 · 2024 – 2025</small>
+              <h3>Associate Project Manager</h3>
+              <em>Webpoint Solutions</em>
+              <ul>
+                <li>
+                  Led end-to-end delivery of 7 projects (5 shipped to
+                  production), coordinating clients, developers and change
+                  requests across the full delivery lifecycle.
+                </li>
+                <li>
+                  Translated business requirements into product requirements and
+                  engineering tasks as the primary link between business and
+                  technical stakeholders; ran Agile/Scrum ceremonies.
+                </li>
+              </ul>
+              <p class="rstat"><b>7</b> projects led · <b>5</b> shipped</p>
+            </article>
+
+            <article class="rcard">
+              <span class="rrope l" aria-hidden="true"></span
+              ><span class="rrope r" aria-hidden="true"></span>
+              <small>ROLE 2 / 3 · 2021 – 2022</small>
+              <h3>Senior Marketing Officer</h3>
+              <em>Mid-Valley International College</em>
+              <ul>
+                <li>
+                  Lifted lead conversion by 30% through digital admission
+                  campaigns.
+                </li>
+                <li>
+                  Built and maintained 46+ strategic partnerships with schools,
+                  consultants and alumni networks.
+                </li>
+              </ul>
+              <p class="rstat">
+                <b>+30%</b> lead conversion · <b>46+</b> partnerships
+              </p>
+            </article>
+
+            <article class="rcard">
+              <span class="rrope l" aria-hidden="true"></span
+              ><span class="rrope r" aria-hidden="true"></span>
+              <small>ROLE 3 / 3 · 2018 – 2019</small>
+              <h3>Bancassurance Officer</h3>
+              <em>National Life Insurance Company</em>
+              <ul>
+                <li>
+                  Drove Rs. 25M semi-annual premium revenue across 10 partner
+                  bank branches (84% of targets).
+                </li>
+                <li>
+                  Delivered 30+ training sessions that contributed to a 60%
+                  increase in insurance sales, and facilitated 3 bank-insurer
+                  MOUs.
+                </li>
+              </ul>
+              <p class="rstat">
+                <b>Rs. 25M</b> premiums · <b>10</b> bank branches
+              </p>
+            </article>
+
+            <div class="rdots" id="rDots"></div>
+            <p class="rhint" id="rHint">Scroll to swing in the next role</p>
+          </div>
+        </div>
+
+        <!-- <ul class="ledger edu">
+          <li>
+            <div>
+              <h3>Télécom SudParis, France</h3>
+              <em>Sep 2026 – present</em>
+            </div>
+            <p>
+              MSc in Data Science &amp; Network Intelligence (DANI dual-degree
+              programme), Institut Polytechnique de Paris. Group project: GLOF
+              early warning system for IoT and digital twins.
+            </p>
+          </li>
+          <li>
+            <div>
+              <h3>Asian Institute of Technology, Thailand</h3>
+              <em>Aug 2025 – present</em>
+            </div>
+            <p>
+              M.S. in Information Management, Data Science &amp; AI. Projects:
+              BNPL credit risk dashboards, air quality alerts with PM2.5
+              forecasting, and cold lead conversion prediction.
+            </p>
+          </li>
+          <li>
+            <div>
+              <h3>Purbanchal University, Nepal</h3>
+              <em>Jul 2020 – Jul 2024</em>
+            </div>
+            <p>
+              Master of Business Administration, Finance: financial analysis,
+              credit risk, financial modelling, business cases and market
+              analysis.
+            </p>
+          </li>
+        </ul>
+      </section> -->
+
+      <section id="journey">
+        <h2>My educational journey</h2>
+        <p class="mut">
+          Press play and watch the story unfold. Each chapter lands in a new
+          place with what I studied and did there. Drag the globe any time to
+          explore.
+        </p>
+        <div class="cine" id="jMap">
+          <canvas
+            id="jCanvas"
+            role="img"
+            aria-label="Interactive 3D satellite globe telling my educational journey"
+          ></canvas>
+          <div class="cvig"></div>
+          <div class="cbar t"></div>
+          <div class="cbar b"></div>
+          <div class="chud" id="jHud" aria-hidden="true"></div>
+          <div class="ctitle" id="jTitle" aria-hidden="true"></div>
+          <div class="jcard" id="jCard" aria-live="polite"></div>
+          <div class="cprog"><i id="jProg"></i></div>
+          <div class="cctl">
+            <button type="button" id="jPrev" aria-label="Previous chapter">
+              Prev</button
+            ><button type="button" id="jTour">Play tour</button
+            ><button type="button" id="jNext" aria-label="Next chapter">
+              Next
+            </button>
+            <div class="jstops" id="jStops"></div>
+            <button type="button" id="jReset">Overview</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>What I bring</h2>
+        <div class="skills">
+          <div>
+            <h3>Product</h3>
+            <p>
+              Turning business requirements into backlog items and engineering
+              tasks, running Agile/Scrum ceremonies, and keeping stakeholders
+              aligned. Tools: Jira, Trello.
+            </p>
+          </div>
+          <div>
+            <h3>Data and AI</h3>
+            <p>
+              Machine learning, predictive analytics, time-series forecasting
+              and MLOps in Python and SQL, with dashboards in Tableau and Power
+              BI. Scikit-learn for classification.
+            </p>
+          </div>
+          <div>
+            <h3>Automation and systems</h3>
+            <p>
+              n8n workflows with local Ollama and Gemini models, IoT pipelines
+              on MQTT and InfluxDB, Docker, Supabase, Next.js and C4
+              architecture diagrams.
+            </p>
+          </div>
+          <div>
+            <h3>Finance and growth</h3>
+            <p>
+              MBA in Finance: financial analysis, credit risk and modelling.
+              Hands-on bancassurance sales and partnership-led marketing.
+            </p>
+          </div>
+        </div>
+        <p class="mut" style="margin-top: 28px">
+          Languages: English (fluent) · French (A1) · Nepali (native)
+        </p>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="cleft">
+          <h2>Let's talk</h2>
+          <p class="mut">
+            Open to AI Product Management and data analytics internships from 1
+            February 2027. Based in Évry, France.
+          </p>
+          <p>
+            <a id="mail" href="mailto:sendtoshuvam@gmail.com"
+              >sendtoshuvam@gmail.com</a
+            >
+          </p>
+          <p>
+            <a
+              href="#"
+              id="li"
+              style="font-size: 20px; border-bottom-width: 2px"
+              >LinkedIn</a
+            >
+            &nbsp;
+            <a
+              href="#"
+              id="gh"
+              style="font-size: 20px; border-bottom-width: 2px"
+              >GitHub</a
+            >
+          </p>
+        </div>
+        <aside class="qrcard">
+          <a
+            class="qrlink"
+            href="https://wa.me/9779860308208?text=Hi%20Shuvam%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch."
+            target="_blank"
+            rel="noopener"
+            aria-label="Chat with Shuvam on WhatsApp"
+          >
+            <span class="qrtile">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+width="1113px" height="1113px" viewBox="0 0 1113 1113" enable-background="new 0 0 1113 1113" xml:space="preserve">
+<rect x="0" y="0" width="1113" height="1113" fill="rgb(255,255,255)" /><g transform="translate(42,42)"><g transform="translate(189,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,0) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,21) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,42) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,63) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,84) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,105) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,126) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,147) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,168) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,189) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,210) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,231) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,252) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,273) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,294) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,315) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,336) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,357) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,378) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,399) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,420) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,441) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,462) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,483) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,504) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,525) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,546) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,567) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,588) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,609) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,630) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,651) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,672) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,693) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,714) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,735) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,756) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(84,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,777) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(105,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,798) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(63,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,819) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(21,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(126,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(147,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,840) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,861) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,882) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(966,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,903) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(189,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(798,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,924) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(336,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(378,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(420,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(588,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(882,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,945) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(252,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(399,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(693,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(756,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(777,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(819,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,966) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(315,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(441,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(609,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(630,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(672,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(714,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(861,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(903,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,987) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(168,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(210,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(231,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(273,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(294,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(357,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(462,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(483,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(504,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(525,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(546,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(567,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(651,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(735,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(840,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(945,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(987,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(1008,1008) scale(0.21,0.21)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(0,0) scale(1.47, 1.47)"><g transform="" style="fill: rgb(0, 0, 0);">
+<g>
+	<rect x="15" y="15" style="fill:none;" width="70" height="70"/>
+	<path d="M85,0H15H0v15v70v15h15h70h15V85V15V0H85z M85,85H15V15h70V85z"/>
+</g>
+</g></g><g transform="translate(882,0) scale(1.47, 1.47)"><g transform="" style="fill: rgb(0, 0, 0);">
+<g>
+	<rect x="15" y="15" style="fill:none;" width="70" height="70"/>
+	<path d="M85,0H15H0v15v70v15h15h70h15V85V15V0H85z M85,85H15V15h70V85z"/>
+</g>
+</g></g><g transform="translate(0,882) scale(1.47, 1.47)"><g transform="" style="fill: rgb(0, 0, 0);">
+<g>
+	<rect x="15" y="15" style="fill:none;" width="70" height="70"/>
+	<path d="M85,0H15H0v15v70v15h15h70h15V85V15V0H85z M85,85H15V15h70V85z"/>
+</g>
+</g></g><g transform="translate(42,42) scale(0.63, 0.63)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(924,42) scale(0.63, 0.63)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g><g transform="translate(42,924) scale(0.63, 0.63)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect width="100" height="100"/>
+</g></g></g></svg>
+            </span>
+            <span class="qrcap">Scan to chat on </span>
+          </a>
+        </aside>
+      </section>
+      <footer>
+        Voice recognition runs in your browser. Answers come from the page's own
+        content unless an n8n webhook is connected.
+      </footer>
+    </div>
+
+    <script src="assets/earth-texture.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/voice-agent.js"></script>
+    <script src="js/hero-dashboard.js"></script>
+    <script src="js/recruiter-gate.js"></script>
+    <script src="js/cv-pack.js"></script>
+    <script src="js/photo-access.js"></script>
+    <script src="js/journey-globe.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/job-agent.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/story.js"></script>
+    <script src="js/deck.js"></script>
+    <script src="js/about-book.js"></script>
+    <script src="js/rope-experience.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
