@@ -7,7 +7,8 @@ const CONFIG = {
   github: "#",
   instagram: "#",
   whatsapp: "https://wa.me/9779860308208",
-  entryUrl: "",
+  scriptUrl:
+    "https://script.google.com/macros/s/AKfycbw0Ao-8CczEixzueOjPoEn-tq2rEiU5rI3clG_aL9dZcSCwm9zuVEzB099AjfBgfc9wWw/exec",
   photoRequestUrl: "",
   photoStatusUrl: "",
   cvUrl: "assets/Shuvam_Shrestha_CV.pdf",
