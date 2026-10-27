@@ -1,5 +1,5 @@
 /* Voice and text assistant: speech recognition, local knowledge base, optional n8n webhook. */
-/** Builds the assistant console in the hero. */
+/** Wires the assistant console (inside the floating dock): speech, answers, navigation. */
 function initVoiceAgent() {
   const KB = [
     {
@@ -45,6 +45,7 @@ function initVoiceAgent() {
     {
       k: "job application agent cv resume apply automate tailor",
       t: "#projects",
+      route: "#/project/job-agent",
       a: "My Job Application Agent takes a job link, matches it to my profile and returns a tailored CV. You can try it live in the projects section.",
     },
     {
@@ -60,31 +61,37 @@ function initVoiceAgent() {
     {
       k: "bnpl credit risk tableau dashboard lending",
       t: "#projects",
+      route: "#/project/bnpl-dashboard",
       a: "The BNPL project is a set of interactive Tableau dashboards for a buy-now-pay-later credit risk decision-support platform, shown as a locally run prototype.",
     },
     {
       k: "glof glacial flood iot himalayan lake early warning digital twin mqtt influxdb",
       t: "#projects",
+      route: "#/project/glof-early-warning",
       a: "It's a group project at Télécom SudParis: an early warning system for glacial lake outburst floods. Sensor data goes through MQTT into InfluxDB, a hazard engine scores the risk, and operators review alerts before the ministry is notified on Telegram. I documented it in C4 diagrams and built a real-time Next.js dashboard.",
     },
     {
       k: "air quality pm2.5 pm25 forecasting mlops alert pollution",
       t: "#projects",
+      route: "#/project/air-quality-alerts",
       a: "The Air Quality Alert System is an end-to-end pipeline: data ingestion, PM2.5 forecasting, model training and automated alerting.",
     },
     {
       k: "cold lead conversion prediction classification scikit machine learning sales",
       t: "#projects",
+      route: "#/work/cold-lead-conversion",
       a: "I built and compared classification models to predict lead conversion, and linked the outputs to sales prioritisation and go-to-market decisions.",
     },
     {
       k: "n8n automation workflow pipeline ollama gemini supabase llm youtube rss",
       t: "#projects",
+      route: "#/project/llm-workflow-automation",
       a: "I build n8n workflows with local Ollama and Gemini models: YouTube trend analysis into Google Sheets, and RSS feeds summarised by AI into Supabase. This voice agent is designed to plug into one: your speech becomes text, n8n passes it to an Ollama model, and the answer comes back here.",
     },
     {
       k: "voice portfolio website speech agent site",
       t: "#projects",
+      route: "#/work/ai-voice-portfolio",
       a: "This portfolio is itself a project: recruiters talk to a speech-to-text agent backed by n8n and a local Ollama model, with separate guest and recruiter flows and Telegram approval for private content.",
     },
     {
@@ -107,8 +114,20 @@ function initVoiceAgent() {
       t: "#skills",
       a: "I speak English fluently, Nepali as my native language, and I'm at A1 level in French.",
     },
+    {
+      k: "iot ranger netpie aws monitoring device management platform fastapi sveltekit emqx mqtt telemetry",
+      t: "#work",
+      route: "#/work/iot-ranger",
+      a: "IoT Ranger is a team project from my first year at AIT: an IoT monitoring and device management platform inspired by NETPIE and AWS IoT. I was responsible for the backend, connected it with the frontend and other parts, worked on Firebase and helped shape the architecture.",
+    },
+    {
+      k: "past work previous earlier archive explore more freelance company roles history list everything",
+      t: "#work",
+      a: "The Past work section lists my company roles and my academic and personal projects in one place. You can filter it, and every entry opens its own detail page.",
+    },
   ];
   const NAV = {
+    work: "#work",
     journey: "#journey",
     about: "#about",
     experience: "#experience",
@@ -152,6 +171,16 @@ function initVoiceAgent() {
           };
       }
     }
+    if (
+      best &&
+      best.route &&
+      /\b(details?|page|read|case study|more about|in depth|full)\b/i.test(q)
+    )
+      return {
+        action: "navigate",
+        target: best.route,
+        text: best.a + " Opening its page.",
+      };
     if (best) return { action: "navigate", target: best.t, text: best.a };
     return {
       action: "answer",
@@ -183,14 +212,18 @@ function initVoiceAgent() {
     speechSynthesis.speak(u);
   }
   async function handle(q) {
-    window.onQuery && onQuery(q);
+    Bus.emit("query", q);
     $("said").textContent = "“" + q + "”";
     $("reply").textContent = "Thinking…";
     const r = await ask(q);
-    window.onAnswer && onAnswer(r, q);
+    Bus.emit("answer", { r, q });
     $("reply").textContent = r.text;
     say(r.text);
     if (r.action === "navigate" && r.target) {
+      if (r.target.startsWith("#/")) {
+        openRoute(r.target); // a project or past-work page
+        return;
+      }
       const el = document.querySelector(r.target);
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
@@ -200,6 +233,7 @@ function initVoiceAgent() {
       }
     }
   }
+  Assistant.handle = handle;
   [
     "Who are you?",
     "Show me your projects",
@@ -234,7 +268,7 @@ function initVoiceAgent() {
     rec.continuous = false;
     const set = (v) => {
       on = v;
-      window.botState && botState(v);
+      Bus.emit("listen", v);
       $("mic").setAttribute("aria-pressed", v);
       $("micRow").classList.toggle("live", v);
       $("mic").setAttribute(

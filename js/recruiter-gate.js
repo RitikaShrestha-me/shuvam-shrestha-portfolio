@@ -18,20 +18,22 @@ function initGate() {
     app.removeAttribute("inert");
     document.body.style.overflow = "";
     scrollTo(0, 0);
+    $("dock").removeAttribute("inert"); // the floating assistant is available from here on
 
     if (mode === "recruiter") {
       window.visitor = who;
       document.body.classList.add("rec");
 
-      window.setWelcome &&
-        setWelcome(
+      Bus.emit("welcome",
           "Welcome, " +
             who.name.split(" ")[0] +
             " from " +
             who.company +
-            ". Scroll down and I will introduce Shuvam.",
+            ". Ask me anything about Shuvam, or explore the projects on watch.",
         );
     }
+    Bus.emit("visitor", mode);
+    syncDetail(); // open a shared project link, if there is one
   }
 
   $("bGuest").onclick = () => enter("guest");

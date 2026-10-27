@@ -1,0 +1,214 @@
+/* Hero: who I am, what I'm looking for, and the next click. Everything is visible on load. */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(28px, 6vh, 72px) 0 64px;
+  min-height: calc(100vh - 90px);
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  padding: 6px 14px;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 99px;
+  font:
+    12px ui-monospace,
+    Menlo,
+    monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: rgba(45, 212, 191, 0.06);
+}
+.hero-eyebrow i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 10px var(--teal);
+  animation: led 1.4s infinite alternate;
+}
+.hero-title {
+  font-size: clamp(40px, 6vw, 82px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin: 0;
+  font-weight: 700;
+}
+.hero-title em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-lead {
+  color: var(--soft);
+  font-size: clamp(17px, 1.5vw, 20px);
+  max-width: 54ch;
+  margin: 22px 0 0;
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 99px;
+  font:
+    500 16px "IBM Plex Sans",
+    system-ui,
+    sans-serif;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: rgba(10, 16, 25, 0.6);
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+}
+.btn.primary {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.btn.primary:hover {
+  background: #fff;
+}
+.hero-facts {
+  list-style: none;
+  margin: 36px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+.hero-facts li {
+  padding: 16px 16px 0 0;
+}
+.hero-facts small {
+  display: block;
+  font:
+    11px ui-monospace,
+    Menlo,
+    monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.hero-facts span {
+  font-size: 15px;
+  color: var(--soft);
+  line-height: 1.45;
+  display: block;
+}
+.hero-agent {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 26px 22px 24px;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 50% 28%,
+      rgba(45, 212, 191, 0.14),
+      transparent 62%
+    ),
+    rgba(10, 16, 25, 0.7);
+}
+.hero-agent .botStage {
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+.hero-agent .bubble {
+  margin: 0;
+  max-width: 30ch;
+  text-align: left;
+  border-radius: 18px 18px 18px 4px;
+}
+.hero-agent #bot {
+  width: 170px;
+}
+.hero-ask {
+  width: 100%;
+  text-align: center;
+}
+.hero-ask small {
+  display: block;
+  color: var(--soft);
+  font:
+    12px ui-monospace,
+    Menlo,
+    monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.hero-ask .chips {
+  justify-content: center;
+  margin: 0;
+}
+.hero-mic {
+  margin-top: 14px;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+.hero-copy > * {
+  animation: rise 0.7s ease both;
+}
+.hero-copy > :nth-child(2) {
+  animation-delay: 0.08s;
+}
+.hero-copy > :nth-child(3) {
+  animation-delay: 0.16s;
+}
+.hero-copy > :nth-child(4) {
+  animation-delay: 0.24s;
+}
+.hero-copy > :nth-child(5) {
+  animation-delay: 0.32s;
+}
+.hero-agent {
+  animation: rise 0.8s 0.2s ease both;
+}
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .hero-facts {
+    grid-template-columns: 1fr;
+  }
+  .hero-facts li {
+    padding-bottom: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy > *,
+  .hero-agent {
+    animation: none;
+  }
+}

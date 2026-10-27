@@ -1,0 +1,52 @@
+/* Recruiter pack: CV, links, photos. */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.tabs button {
+  font: inherit;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--soft);
+  border-radius: 99px;
+  padding: 6px 16px;
+  cursor: pointer;
+}
+.tabs [aria-selected="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.mut {
+  color: var(--soft);
+  max-width: 56ch;
+}
+.soc {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.soc a {
+  border-bottom: 3px solid var(--gold);
+  text-decoration: none;
+  font:
+    700 24px "Bricolage Grotesque",
+    sans-serif;
+}
+.gal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+.gal div,
+.gal img {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  width: 100%;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--teal), var(--gold));
+}

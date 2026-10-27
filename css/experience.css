@@ -1,0 +1,195 @@
+/* Experience: roles hanging from a rope. */
+.rcard {
+  position: relative;
+  margin: 0 0 24px;
+  padding: 26px 30px 24px;
+  background: linear-gradient(160deg, rgba(45, 212, 191, 0.08), rgba(10, 16, 25, 0.92) 45%);
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 var(--gold), 0 24px 50px rgba(0, 0, 0, 0.45);
+}
+.rcard small {
+  font: 12px ui-monospace, Menlo, monospace;
+  letter-spacing: 0.18em;
+  color: var(--teal);
+}
+.rcard h3 {
+  font-size: clamp(26px, 3.4vw, 38px);
+  margin: 10px 0 4px;
+}
+.rcard em {
+  display: block;
+  font-style: normal;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.rcard ul {
+  margin: 0 0 14px;
+  padding-left: 18px;
+  color: var(--soft);
+}
+.rcard ul li {
+  padding: 0 0 6px;
+}
+.rstat {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  color: var(--soft);
+  font-size: 15px;
+}
+.rstat b {
+  color: var(--ink);
+  font: 700 20px "Bricolage Grotesque", sans-serif;
+}
+.rrope,
+.beam,
+.rdots,
+.rhint {
+  display: none;
+}
+.rope-on {
+  --rope: clamp(70px, 17vh, 170px);
+  height: calc(100vh + (var(--n, 3) - 1) * 65vh);
+  margin-top: 8px;
+}
+.rope-on .rope-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.rope-on .beam {
+  display: block;
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  width: min(760px, 94%);
+  height: 16px;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  background: linear-gradient(#8a6a33, #5b4421 60%, #3e2f17);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.rope-on .beam::before,
+.rope-on .beam::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 12px;
+  height: 36px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #6e5328, #3e2f17);
+}
+.rope-on .beam::before {
+  left: -6px;
+}
+.rope-on .beam::after {
+  right: -6px;
+}
+.rope-on .rcard {
+  position: absolute;
+  top: calc(42px + var(--rope));
+  left: 0;
+  right: 0;
+  width: min(640px, 92%);
+  margin: 0 auto;
+  transform-origin: 50% calc(-1 * var(--rope)); /* swings from the beam, not from the card */
+  transform: translateY(-115%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform 0.85s cubic-bezier(0.2, 0.85, 0.3, 1),
+    opacity 0.45s ease,
+    visibility 0s linear 0.85s;
+}
+.rope-on .rcard.on {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    transform 0.85s cubic-bezier(0.2, 0.85, 0.3, 1),
+    opacity 0.45s ease 0.1s,
+    visibility 0s;
+}
+.rope-on .rope-stage.live .rcard.on {
+  animation: swing 2.6s ease-out 0.75s forwards;
+}
+.rope-on .rrope {
+  display: block;
+  position: absolute;
+  top: calc(-1 * var(--rope));
+  height: var(--rope);
+  width: 7px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(160deg, #e0bb72 0 3px, #8d6a2f 3px 6px);
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.5);
+}
+.rope-on .rrope.l { left: 16%; }
+.rope-on .rrope.r { right: 16%; }
+.rope-on .rrope::before,
+.rope-on .rrope::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #b98d45;
+  box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.35);
+}
+.rope-on .rrope::before { top: -3px; }
+.rope-on .rrope::after { bottom: -3px; }
+.rope-on .rdots {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.rope-on .rdots button {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--soft);
+  background: transparent;
+  cursor: pointer;
+}
+.rope-on .rdots button::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+}
+.rope-on .rdots button[aria-current="true"] {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.25);
+}
+.rope-on .rhint {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  margin: 0;
+  text-align: center;
+  font: 11px ui-monospace, Menlo, monospace;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+@media (max-width: 820px) {
+  .rope-on {
+    --rope: clamp(56px, 13vh, 120px);
+  }
+  .rcard {
+    padding: 20px 20px 18px;
+  }
+  .rope-on .rdots {
+    right: 0;
+  }
+}

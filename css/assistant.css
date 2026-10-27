@@ -1,0 +1,134 @@
+/* Assistant console (mic, answers, chips). The floating dock is at the bottom. */
+.console {
+  background: var(--card);
+  border: 1.5px solid var(--ink);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 8px 8px 0 var(--gold);
+}
+.console h2 {
+  font-size: 22px;
+}
+.console small {
+  color: var(--soft);
+}
+.mic-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 18px 0;
+}
+#mic {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  flex: none;
+  transition: transform 0.15s;
+}
+#mic:hover {
+  transform: scale(1.05);
+}
+#mic[aria-pressed="true"] {
+  background: var(--teal);
+  color: #fff;
+}
+#mic svg {
+  width: 30px;
+  height: 30px;
+}
+.bars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 44px;
+  flex: 1;
+}
+.bars i {
+  display: block;
+  width: 5px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--line);
+}
+.live .bars i {
+  background: var(--teal);
+  animation: b 0.9s ease-in-out infinite;
+}
+.live .bars i:nth-child(2n) {
+  animation-delay: 0.15s;
+}
+.live .bars i:nth-child(3n) {
+  animation-delay: 0.3s;
+}
+.live .bars i:nth-child(5n) {
+  animation-delay: 0.45s;
+}
+@keyframes b {
+  50% {
+    height: 40px;
+  }
+}
+.said {
+  min-height: 26px;
+  font-style: italic;
+  color: var(--soft);
+}
+.reply {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--teal);
+  background: var(--paper);
+  border-radius: 0 12px 12px 0;
+  min-height: 72px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.opts {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--soft);
+}
+.console {
+  background: rgba(10, 16, 25, 0.82);
+  backdrop-filter: blur(8px);
+  border-color: rgba(45, 212, 191, 0.5);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---- Floating assistant dock (bottom-right on every page) ---- */
+.dock{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:48;display:grid;justify-items:end;gap:12px}
+.dock-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 18px 8px 10px;border-radius:99px;border:1.5px solid var(--teal);background:rgba(10,16,25,.94);backdrop-filter:blur(8px);color:var(--ink);font:500 15px 'IBM Plex Sans',system-ui,sans-serif;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.5);animation:ring 2.4s ease-out 4}
+.dock-btn:hover{border-color:var(--gold)}
+.dock-btn svg{width:34px;height:34px;flex:none}
+@keyframes ring{0%{box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 0 0 rgba(45,212,191,.55)}100%{box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 0 18px rgba(45,212,191,0)}}
+.dock-panel{width:min(400px,calc(100vw - 28px));max-height:min(660px,calc(100vh - 120px));overflow:auto;border:1px solid rgba(45,212,191,.45);border-radius:22px;background:rgba(8,13,22,.97);backdrop-filter:blur(12px);box-shadow:0 24px 70px rgba(0,0,0,.65);padding:14px 18px 18px;animation:dockIn .25s ease both}
+@keyframes dockIn{from{opacity:0;transform:translateY(10px) scale(.98)}}
+.dock-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.dock-head h2{font-size:18px;margin:0;line-height:1.2}
+.dock-head small{color:var(--soft)}
+.dock-head>div{flex:1}
+.dock-x{font:inherit;font-size:22px;line-height:1;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.dock-x:hover{border-color:var(--gold)}
+.dock .console{background:transparent;border:0;box-shadow:none;padding:0;backdrop-filter:none}
+.dock #mic{width:60px;height:60px}
+.dock .mic-row{margin:10px 0}
+.dock .reply{font-size:15px;min-height:60px}
+@media(max-width:600px){.dock-btn span{display:none}.dock-btn{padding:8px}.dock-panel{max-height:62vh}}
+@media(prefers-reduced-motion:reduce){.dock-btn,.dock-panel{animation:none}}

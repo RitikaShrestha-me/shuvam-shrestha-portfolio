@@ -1,0 +1,139 @@
+/* About: the book. */
+.stag {
+  display: block;
+  font:
+    12px ui-monospace,
+    Menlo,
+    monospace;
+  letter-spacing: 0.22em;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+.book {
+  position: relative;
+  display: grid; /* every page sits in the same cell, so the book is as tall as its longest page */
+  perspective: 2000px;
+  perspective-origin: 50% 35%;
+  max-width: 800px;
+  margin: 8px auto 0;
+  touch-action: pan-y; /* vertical scroll stays native, horizontal swipes turn pages */
+}
+.book:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 10px;
+  border-radius: 20px;
+}
+.bpage {
+  grid-area: 1 / 1;
+  position: relative;
+  padding: clamp(28px, 5vw, 52px) clamp(24px, 5vw, 56px) 72px clamp(40px, 6.5vw, 76px);
+  background: linear-gradient(100deg, #0e1724, #0a1019 22%, #0b121c);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  border-radius: 4px 20px 20px 4px;
+  box-shadow: 8px 8px 0 var(--gold), 0 30px 60px rgba(0, 0, 0, 0.45);
+  transform-origin: left center;
+  transition:
+    transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 0.5s ease 0.25s,
+    visibility 0s linear 0s;
+}
+.bpage.flipped {
+  transform: rotateY(-112deg);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 0.5s ease 0.3s,
+    visibility 0s linear 0.9s;
+}
+.bpage::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 30px;
+  border-radius: 4px 0 0 4px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent);
+  pointer-events: none;
+}
+.bpage::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 34px;
+  width: 16px;
+  height: 46px;
+  background: var(--gold);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+  pointer-events: none;
+}
+.bpage h3 {
+  font-size: clamp(26px, 3.6vw, 40px);
+  line-height: 1.08;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+.bpage p {
+  margin: 0 0 14px;
+  color: var(--soft);
+  max-width: 62ch;
+}
+.pfacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+.pfacts span {
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 3px 12px;
+  font-size: 13px;
+  color: var(--soft);
+}
+.pno {
+  position: absolute;
+  right: 28px;
+  bottom: 22px;
+  font: 12px ui-monospace, Menlo, monospace;
+  letter-spacing: 0.2em;
+  color: var(--soft);
+}
+.bctl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 34px;
+}
+.bdots {
+  display: flex;
+  gap: 10px;
+}
+.bdots button {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--soft);
+  background: transparent;
+  cursor: pointer;
+}
+.bdots button::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+}
+.bdots button[aria-current="true"] {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.25);
+}
+@media (max-width: 820px) {
+  .bctl {
+    gap: 12px;
+  }
+  .bpage {
+    box-shadow: 5px 5px 0 var(--gold), 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+}

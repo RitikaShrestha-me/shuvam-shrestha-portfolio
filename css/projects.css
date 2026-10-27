@@ -1,0 +1,294 @@
+/* Projects on watch: list, stage, flow animation, agent demo, video. */
+.pj {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.pjq {
+  display: grid;
+  gap: 8px;
+}
+.pjq button {
+  font: inherit;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(10, 16, 25, 0.6);
+  color: var(--soft);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.pjq button i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+}
+.pjq button small {
+  display: block;
+  font:
+    11px ui-monospace,
+    Menlo,
+    monospace;
+  letter-spacing: 0.12em;
+}
+.pjq button b {
+  color: var(--ink);
+  font-weight: 500;
+}
+.pjq button[aria-selected="true"] {
+  border-color: var(--teal);
+  background: rgba(45, 212, 191, 0.08);
+  box-shadow:
+    0 0 0 1px var(--teal),
+    0 0 28px rgba(45, 212, 191, 0.18);
+}
+.pjq button[aria-selected="true"] i {
+  background: var(--teal);
+  box-shadow: 0 0 10px var(--teal);
+  animation: led 1.2s infinite alternate;
+}
+@keyframes led {
+  to {
+    opacity: 0.3;
+  }
+}
+.pjs {
+  position: relative;
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  border-radius: 20px;
+  padding: 26px;
+  background: linear-gradient(
+    160deg,
+    rgba(45, 212, 191, 0.08),
+    rgba(10, 16, 25, 0.88) 40%
+  );
+  overflow: hidden;
+  min-height: 430px;
+}
+.pjbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3px;
+  background: var(--teal);
+  width: 0;
+}
+.pjbar.run {
+  animation: pbar 9s linear forwards;
+}
+@keyframes pbar {
+  to {
+    width: 100%;
+  }
+}
+.pjbadge {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font:
+    12px ui-monospace,
+    Menlo,
+    monospace;
+  letter-spacing: 0.18em;
+  color: var(--teal);
+  border: 1px solid rgba(45, 212, 191, 0.5);
+  border-radius: 99px;
+  padding: 3px 12px;
+  cursor: pointer;
+  background: transparent;
+}
+.pjbadge i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  animation: led 1s infinite alternate;
+}
+.pjs h3 {
+  font-size: clamp(28px, 3.4vw, 42px);
+  margin: 16px 0 10px;
+}
+.pjs p {
+  color: var(--soft);
+  max-width: 62ch;
+  margin: 0 0 14px;
+}
+.pjflow {
+  overflow-x: auto;
+  margin: 10px 0;
+}
+.pjflow svg {
+  display: block;
+  min-width: 520px;
+  width: 100%;
+  height: auto;
+}
+.pjflow text {
+  fill: var(--soft);
+  font:
+    12px "IBM Plex Sans",
+    sans-serif;
+  text-anchor: middle;
+}
+.pjflow .nd {
+  fill: #0a1019;
+  stroke: var(--teal);
+  stroke-width: 1.5;
+  animation: nd 4s infinite;
+}
+@keyframes nd {
+  0%,
+  14% {
+    fill: #2dd4bf;
+  }
+  32%,
+  100% {
+    fill: #0a1019;
+  }
+}
+.pjflow .ln {
+  stroke: var(--line);
+  stroke-width: 2;
+}
+.chips span {
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 3px 12px;
+  font-size: 13px;
+  color: var(--soft);
+}
+.pjs iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 0;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+.agent {
+  margin-top: 20px;
+  border-top: 1px dashed var(--line);
+  padding-top: 18px;
+}
+.agent b.t {
+  font:
+    12px ui-monospace,
+    Menlo,
+    monospace;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+.arow {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+.agent summary {
+  cursor: pointer;
+  color: var(--soft);
+  font-size: 14px;
+  margin: 6px 0;
+}
+.agent textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  margin-top: 8px;
+}
+.steps {
+  list-style: none;
+  margin: 14px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.steps li {
+  font-size: 12px;
+  color: var(--soft);
+  border-top: 3px solid var(--line);
+  padding-top: 6px;
+}
+.steps li.on {
+  border-color: var(--gold);
+  color: var(--ink);
+}
+.steps li.ok {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+#jLog {
+  font:
+    12px/1.6 ui-monospace,
+    Menlo,
+    monospace;
+  color: #9fe3da;
+  background: #03050a;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 14px;
+  min-height: 64px;
+  max-height: 150px;
+  overflow: auto;
+  margin: 0;
+  white-space: pre-wrap;
+}
+.cvout {
+  margin-top: 14px;
+  border: 1px solid rgba(242, 184, 64, 0.5);
+  border-radius: 14px;
+  padding: 16px 18px;
+  background: rgba(242, 184, 64, 0.05);
+}
+.cvout h4 {
+  margin: 6px 0;
+  font:
+    700 19px "Bricolage Grotesque",
+    sans-serif;
+}
+.cvout ul {
+  margin: 6px 0;
+  padding-left: 18px;
+  color: var(--soft);
+}
+.cvout p {
+  font-size: 15px;
+}
+.cvout small {
+  color: var(--gold);
+  letter-spacing: 0.14em;
+}
+@media (max-width: 820px) {
+  .pj {
+    grid-template-columns: 1fr;
+  }
+  .pjq {
+    grid-auto-flow: column;
+    overflow-x: auto;
+    grid-auto-columns: 210px;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---- Project stage additions: actions, demo video ---- */
+.pjactions{margin-top:18px}
+.pjmedia{margin-top:20px;border-top:1px dashed var(--line);padding-top:18px}
+.vframe iframe,.vframe video{width:100%;aspect-ratio:16/9;border:0;border-radius:14px;background:#000;display:block}
+.vplay{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;aspect-ratio:16/9;border:1px solid rgba(45,212,191,.4);border-radius:14px;background:radial-gradient(circle at 50% 50%,rgba(45,212,191,.16),rgba(10,16,25,.9) 70%);color:var(--ink);font:500 18px 'IBM Plex Sans',system-ui,sans-serif;cursor:pointer;transition:border-color .2s}
+.vplay:hover{border-color:var(--gold)}
+.vplay span{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:18px}
+.vph{display:grid;gap:6px;padding:26px;border:1px dashed var(--line);border-radius:14px;color:var(--soft);text-align:center}
+.vph b{color:var(--ink);font-size:18px}

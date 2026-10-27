@@ -1,0 +1,94 @@
+/* The robot greeter and its speech bubble. */
+.botStage {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+#bot {
+  width: 170px;
+  height: auto;
+  flex: none;
+  overflow: visible;
+}
+.bubble {
+  background: var(--card);
+  border: 1.5px solid var(--ink);
+  border-radius: 16px 16px 16px 4px;
+  padding: 10px 14px;
+  font-size: 15px;
+  max-width: 26ch;
+  margin-bottom: 56px;
+}
+#head {
+  transform-box: fill-box;
+  transform-origin: 50% 90%;
+}
+#eyes,
+#mouth,
+#ant {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#eyes {
+  animation: blink 5s infinite;
+}
+.wave {
+  transform-box: fill-box;
+  transform-origin: 50% 8%;
+  animation: wave 2.6s ease-in-out 1;
+}
+.talk #mouth {
+  animation: talk 0.28s ease-in-out infinite alternate;
+}
+.listen #ant {
+  animation: pulse 0.6s ease-in-out infinite alternate;
+}
+@keyframes blink {
+  0%,
+  94%,
+  100% {
+    transform: scaleY(1);
+  }
+  97% {
+    transform: scaleY(0.1);
+  }
+}
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(-140deg);
+  }
+  30% {
+    transform: rotate(-112deg);
+  }
+  45% {
+    transform: rotate(-146deg);
+  }
+  60% {
+    transform: rotate(-112deg);
+  }
+  75% {
+    transform: rotate(-146deg);
+  }
+}
+@keyframes talk {
+  to {
+    transform: scaleY(3);
+  }
+}
+@keyframes pulse {
+  to {
+    opacity: 0.2;
+  }
+}
+#bot {
+  filter: drop-shadow(0 0 26px rgba(45, 212, 191, 0.35));
+}
+.bubble {
+  background: rgba(10, 16, 25, 0.85);
+  border-color: rgba(45, 212, 191, 0.5);
+}

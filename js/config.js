@@ -16,15 +16,7 @@ const CONFIG = {
   jobAgentUrl: "",
   photo: "",
   photos: [],
-  videos: [
-    "jNQXAC9IVRw",
-    "jNQXAC9IVRw",
-    "jNQXAC9IVRw",
-    "jNQXAC9IVRw",
-    "jNQXAC9IVRw",
-    "jNQXAC9IVRw",
-    "jNQXAC9IVRw",
-  ],
+  // demo videos now live in data/projects.js (the `video` field of each project)
 };
 // Recruiter flow (n8n): entryUrl = POST {name,company,email} -> {ok:true}. photoRequestUrl = POST {name,company,email} -> {id}; photoStatusUrl = GET ?id= -> {status:'pending'|'approved'|'denied',photos:[urls]}.
 // cvUrl = link to your real CV PDF (leave empty to use the built-in starter CV). videos = one YouTube ID per project, in page order.

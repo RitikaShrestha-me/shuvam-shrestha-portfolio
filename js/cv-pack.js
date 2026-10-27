@@ -31,6 +31,7 @@ function initCvPack() {
   }
   $("cvTop").onclick = getCV;
   $("cvBtn").onclick = getCV;
+  if ($("cvHero")) $("cvHero").onclick = getCV;
   $("sLi").href = CONFIG.linkedin;
   $("sIg").href = CONFIG.instagram;
   $("sWa").href = CONFIG.whatsapp;

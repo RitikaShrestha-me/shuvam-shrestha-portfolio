@@ -156,7 +156,7 @@ function showCV(r) {
   $("jDl").onclick = () =>
     saveHtml("Shuvam_Shrestha_CV_tailored.html", cvHtml(r));
 }
-const agentHTML = `<div class='agent'><b class='t'>LIVE AGENT</b><div class='arow'><input id='jUrl' type='text' placeholder='https://company.com/jobs/ai-product-manager' aria-label='Job link'><button class='send go' id='jRun' type='button'>Run agent</button></div><details><summary>Demo mode: paste the job description</summary><textarea id='jTxt' rows='5' placeholder='Paste the job description here' aria-label='Job description'></textarea></details><ol class='steps' id='jSteps'><li>Read job link</li><li>Extract requirements</li><li>Match my profile</li><li>Tailor the CV</li><li>Review and export</li></ol><pre id='jLog'>Waiting for a job link.</pre><div id='jOut'></div></div>`;
+const agentHTML = `<div class='agent'><b class='t'>AGENT DEMO</b><div class='arow'><input id='jUrl' type='text' placeholder='https://company.com/jobs/ai-product-manager' aria-label='Job link'><button class='send go' id='jRun' type='button'>Run agent</button></div><details><summary>Demo mode: paste the job description</summary><textarea id='jTxt' rows='5' placeholder='Paste the job description here' aria-label='Job description'></textarea></details><ol class='steps' id='jSteps'><li>Read job link</li><li>Extract requirements</li><li>Match my profile</li><li>Tailor the CV</li><li>Review and export</li></ol><pre id='jLog'>Waiting for a job link.</pre><div id='jOut'></div></div>`;
 let busy = false,
   timer = null;
 function wireAgent() {

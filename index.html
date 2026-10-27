@@ -9,10 +9,23 @@
     <title>Shuvam Shrestha · AI Product Management &amp; Data Analytics</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/robot.css" />
+    <link rel="stylesheet" href="css/assistant.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/intro.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/experience.css" />
+    <link rel="stylesheet" href="css/journey.css" />
+    <link rel="stylesheet" href="css/pack.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/work.css" />
+    <link rel="stylesheet" href="css/detail.css" />
     <script src="vendor/three.min.js"></script>
   </head>
   <body>
@@ -211,11 +224,11 @@
       <nav aria-label="Main">
         <strong>Shuvam Shrestha</strong>
         <ul>
-          <li><a href="#dash">Live</a></li>
+          <li><a href="#projects">Projects on watch</a></li>
+          <li><a href="#work">Past work</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#journey">Journey</a></li>
-          <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
           <li class="rec-only">
@@ -224,11 +237,30 @@
         </ul>
       </nav>
 
-      <div class="heroWrap" id="heroWrap">
-        <header class="hero">
-          <div>
-            <div class="botStage">
-              <svg
+      <header class="hero" id="hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><i></i>Open to internships · from 1 February 2027</p>
+          <h1 class="hero-title">Business sense, data skills, <em>AI products.</em></h1>
+          <!-- <p class="hero-lead">
+            I'm Shuvam, a dual-degree master's student (AIT × Télécom SudParis)
+            moving from IT project management, marketing and bancassurance into
+            AI product management and data analytics.
+          </p> -->
+          <div class="hero-cta">
+            <a class="btn primary" href="#projects">See projects on watch</a>
+            <a class="btn" href="#work">Explore past work</a>
+            <button class="btn rec-only" id="cvHero" type="button">Download CV</button>
+          </div>
+          <ul class="hero-facts">
+            <li><small>Studying</small><span>Dual master's in data science and AI, AIT × Télécom SudParis</span></li>
+            <li><small>Background</small><span>Bancassurance, marketing, IT project management, MBA in Finance</span></li>
+            <li><small>Looking for</small><span>AI Product Owner or AI PM internship, data analytics</span></li>
+          </ul>
+        </div>
+        <aside class="hero-agent" aria-label="Portfolio assistant">
+          <div class="botStage">
+            <div class="bubble" id="bubble" aria-live="polite"></div>
+            <svg
                 id="bot"
                 viewBox="0 0 240 290"
                 role="img"
@@ -353,88 +385,16 @@
                   />
                 </g>
               </svg>
-              <div class="bubble" id="bubble" aria-live="polite">
-                Hi, I'm Shuvam's portfolio agent. Scroll down and I'll introduce
-                him.
-              </div>
-            </div>
-            <h1 aria-label="Talk to my portfolio. It talks back.">
-              <span class="w">Talk</span><span class="w">to</span
-              ><span class="w">my</span><span class="w">portfolio.</span
-              ><span class="w">It</span><span class="w">talks</span
-              ><span class="w">back.</span>
-            </h1>
-            <p class="lead rv">
-              I'm Shuvam, a dual-degree master's student moving from IT project
-              management, marketing and bancassurance into AI product
-              management. I'm open to internships from 1 February 2027. Instead
-              of reading about my work, ask for it out loud.
-            </p>
-            <div class="tags rv">
-              <span>AIT × Télécom SudParis</span><span>MBA Finance</span
-              ><span>Data Science &amp; AI</span
-              ><span>Open to internships · Feb 2027</span>
-            </div>
           </div>
-
-          <div
-            class="console"
-            id="console"
-            role="region"
-            aria-label="Voice assistant"
-          >
-            <h2>Ask my portfolio agent</h2>
-            <small>Say "show me projects" or "what is your goal?"</small>
-            <div class="mic-row" id="micRow">
-              <button
-                id="mic"
-                aria-pressed="false"
-                aria-label="Start listening"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                >
-                  <rect x="9" y="3" width="6" height="12" rx="3" />
-                  <path d="M5 11a7 7 0 0 0 14 0M12 18v3" />
-                </svg>
-              </button>
-              <div class="bars" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
-                ><i></i><i></i><i></i><i></i><i></i>
-              </div>
-            </div>
-            <div class="said" id="said" aria-live="polite">
-              Tap the mic and speak in English.
-            </div>
-            <div class="reply" id="reply" aria-live="polite">
-              Hi, I'm Shuvam's portfolio agent. I can answer questions and
-              scroll the page to what you want to see.
-            </div>
-            <div class="chips" id="chips"></div>
-            <form id="form">
-              <input
-                type="text"
-                id="typed"
-                placeholder="Or type a question"
-                aria-label="Type a question"
-              /><button class="send" type="submit">Ask</button>
-            </form>
-            <div class="opts">
-              <label
-                ><input type="checkbox" id="speak" checked /> Speak
-                answers</label
-              ><span id="status">Local agent</span>
-            </div>
+          <div class="hero-ask">
+            <small>Try asking</small>
+            <div class="chips" id="heroChips"></div>
+            <button class="btn hero-mic" id="heroMic" type="button"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg> Ask by voice</button>
           </div>
-        </header>
-      </div>
-
+        </aside>
+      </header>
       <section id="dash">
-        <h2>Live from your visit</h2>
+        <h2>Your visit at a glance</h2>
         <div class="dgrid">
           <div class="c">
             <span class="l">Time on page</span><b id="mTime">0:00</b>
@@ -486,16 +446,26 @@
       </section>
 
       <section id="projects">
-        <h2>Projects, live on watch</h2>
+        <h2>Projects on watch</h2>
         <p class="mut">
           One project is always on watch and switches every few seconds. Pick
-          any to pin it and follow its flow from input to outcome. The Job
-          Application Agent is a working demo.
+          any to pin it, then open its project page for the full story.
+          Recruiters can watch each demo video right here.
         </p>
         <div class="pj">
           <div class="pjq" id="pjq" role="tablist" aria-label="Projects"></div>
           <div class="pjs" id="pjs" aria-live="polite"></div>
         </div>
+      </section>
+      <section id="work">
+        <h2>Explore more of my past work</h2>
+        <p class="mut">
+          Company roles, academic projects and personal builds in one place.
+          Filter the list, and open any entry for its full page.
+        </p>
+        <div class="wk-filters" id="wkFilters" role="group" aria-label="Filter past work"></div>
+        <p class="wk-count" id="wkCount" role="status"></p>
+        <div class="wk-list" id="wkList"></div>
       </section>
 
       <section id="pack" class="rec-only">
@@ -508,9 +478,11 @@
             aria-controls="tabCv"
           >
             CV and links</button
-          ><button
+          >
+          <button
             role="tab"
             id="tPh"
+            disabled
             aria-selected="false"
             aria-controls="tabPh"
           >
@@ -766,7 +738,8 @@
             </p>
           </li>
         </ul>
-      </section> -->
+      -->
+      </section>
 
       <section id="journey">
         <h2>My educational journey</h2>
@@ -3146,16 +3119,46 @@ width="1113px" height="1113px" viewBox="0 0 1113 1113" enable-background="new 0 
         </aside>
       </section>
       <footer>
-        Voice recognition runs in your browser. Answers come from the page's own
-        content unless an n8n webhook is connected.
+        copyright © 2026 Shuvam Shrestha
       </footer>
+    </div>
+
+    
+    <div class="dpage" id="detail" role="dialog" aria-modal="true" aria-labelledby="dTitle" hidden></div>
+
+    <div class="dock" id="dock" inert>
+      <div class="dock-panel" id="dockPanel" role="dialog" aria-labelledby="dockTitle" hidden>
+        <div class="dock-head">
+          <div><h2 id="dockTitle">Portfolio assistant</h2><small>Ask by voice or text. I can also take you to a section.</small></div>
+          <button class="dock-x" id="dockClose" type="button" aria-label="Close assistant">×</button>
+        </div>
+        <div class="console" id="console" role="region" aria-label="Voice assistant">
+          <div class="mic-row" id="micRow">
+            <button id="mic" aria-pressed="false" aria-label="Start listening"><svg viewBox="0 0 24 24"  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+            <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="said" id="said" aria-live="polite">Tap the mic and speak in English.</div>
+          <div class="reply" id="reply" aria-live="polite">Hi, I'm Shuvam's portfolio agent. I can answer questions and take you to what you want to see.</div>
+          <div class="chips" id="chips"></div>
+          <form id="form"><input type="text" id="typed" placeholder="Or type a question" aria-label="Type a question" /><button class="send" type="submit">Ask</button></form>
+          <div class="opts"><label><input type="checkbox" id="speak" checked /> Speak answers</label><span id="status">Local agent</span></div>
+        </div>
+      </div>
+      <button class="dock-btn" id="dockBtn" type="button" aria-expanded="false" aria-controls="dockPanel">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="7" y="9" width="26" height="22" rx="9" fill="var(--ink)"/><rect x="11" y="13" width="18" height="12" rx="5" fill="var(--paper)"/><circle cx="16" cy="19" r="2.4" fill="var(--teal)"/><circle cx="24" cy="19" r="2.4" fill="var(--teal)"/><rect x="18" y="4" width="4" height="6" rx="2" fill="var(--gold)"/></svg>
+        <span>Ask me</span>
+      </button>
     </div>
 
     <script src="assets/earth-texture.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/config.js"></script>
+    <script src="data/projects.js"></script>
+    <script src="data/works.js"></script>
+    <script src="js/assistant-dock.js"></script>
     <script src="js/voice-agent.js"></script>
-    <script src="js/hero-dashboard.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/dashboard.js"></script>
     <script src="js/recruiter-gate.js"></script>
     <script src="js/cv-pack.js"></script>
     <script src="js/photo-access.js"></script>
@@ -3163,6 +3166,8 @@ width="1113px" height="1113px" viewBox="0 0 1113 1113" enable-background="new 0 
     <script src="js/background.js"></script>
     <script src="js/job-agent.js"></script>
     <script src="js/projects.js"></script>
+    <script src="js/work-explorer.js"></script>
+    <script src="js/detail-page.js"></script>
     <script src="js/story.js"></script>
     <script src="js/deck.js"></script>
     <script src="js/about-book.js"></script>

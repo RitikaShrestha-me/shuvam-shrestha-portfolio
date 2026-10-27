@@ -1,73 +1,57 @@
 # Shuvam's AI Portfolio
 
-A one-page portfolio with a card-based intro, a voice assistant, a 3D journey globe, an animated projects showcase and a Job Application Agent. Plain HTML, CSS and JavaScript. No build step, no installs.
+A one-page portfolio: card-based intro, hero with a robot greeter, a floating voice and text assistant, projects on watch with demo videos, a research-style page for every project, a filterable archive of past work, a 3D journey globe, and a Job Application Agent. Plain HTML, CSS and JavaScript. No build step.
 
 ## Run it
 
-**Quickest:** double-click `index.html`.
+- **Quickest:** double-click `index.html`.
+- **Recommended:** `./serve.sh` (Mac/Linux), `serve.bat` (Windows) or `python3 -m http.server 8080`, then open http://localhost:8080. The microphone and YouTube embeds work reliably only this way.
 
-**Recommended:** serve it locally so the microphone and YouTube embeds work reliably (browsers restrict both on `file://`):
+Works offline except Google Fonts and the demo videos.
 
-- macOS / Linux: `./serve.sh`
-- Windows: double-click `serve.bat`
-- or anywhere: `python3 -m http.server 8080` inside this folder
+## Where to change things
 
-Then open http://localhost:8080. Use Chrome, Edge or Safari for voice input.
+| I want to change... | Edit |
+| --- | --- |
+| Email, social links, CV, photo, n8n and Sheet links | `js/config.js` |
+| **Projects on watch**, their detail pages, demo videos, optional links | `data/projects.js` |
+| **Past work** (company, freelance, academic, personal) and its detail pages | `data/works.js` |
+| Hero text and buttons | `index.html` (`<header class="hero">`) |
+| Colours and theme | `css/base.css` (top of the file) |
+| Assistant answers and the questions it understands | `js/voice-agent.js` (`KB` list) |
 
-Works offline except Google Fonts (a system font is used instead) and YouTube demo videos.
+### Add a demo video
+In `data/projects.js`, set `video` on the project: a YouTube link, a Google Drive link (`.../file/d/<id>/view`) or an `.mp4` path. Recruiters see it on the project; guests see the live agent on the Job Application Agent.
+
+### Add links to a project page (optional)
+In `data/projects.js` or `data/works.js`, inside `detail`:
+```js
+links: [{ label: "Source code", url: "https://github.com/...", note: "Repository" }]
+```
+A "Further reading and resources" section appears only when there is at least one link.
+
+### Add a freelance or company project
+Copy the commented example at the bottom of `data/works.js`. Use `kind: "freelance"` and a **Freelance projects** filter appears on its own.
+
+### Share a project page
+Every page has an address like `index.html#/project/job-agent` or `#/work/iot-ranger` (use the **Copy link** button).
 
 ## Folder map
 
-| File                   | What it does                                                                       |
-| ---------------------- | ---------------------------------------------------------------------------------- |
-| `index.html`           | Page markup only                                                                   |
-| `css/styles.css`       | All styling and the black theme tokens (top of file)                               |
-| `js/utils.js`          | Shared helpers (`$`, `rm`, `esc`)                                                  |
-| `js/config.js`         | **Edit this first:** email, social links, CV link, photo, video IDs, n8n endpoints |
-| `js/voice-agent.js`    | Speech recognition, built-in answers, optional n8n webhook                         |
-| `js/hero-dashboard.js` | Robot that follows the cursor, scroll-reveal headline, live dashboard              |
-| `js/recruiter-gate.js` | Guest and recruiter entry, email check                                             |
-| `js/cv-pack.js`        | CV download, social links, recruiter tabs                                          |
-| `js/photo-access.js`   | Private photos unlocked by Telegram approval (needs n8n)                           |
-| `js/journey-globe.js`  | 3D globe and educational journey. **Add stops in the `J` list**                    |
-| `js/background.js`     | Animated network background, section tags                                          |
-| `js/job-agent.js`      | Job Application Agent: match a posting, tailor and export a CV                     |
-| `js/projects.js`       | Projects showcase data and animated pipelines                                      |
-| `js/story.js`          | Interest selection and project previews                                            |
-| `js/deck.js`           | Intro card animations, wheel, keys, swipe, portrait                                |
-| `js/rope-experience.js`| Experience section: roles hang from a rope, one per scroll step                    |
-| `js/about-book.js`     | About section: page-turning book (buttons, dots, arrow keys, swipe)                |
-| `js/main.js`           | Starts every module in order                                                       |
-| `vendor/three.min.js`  | Three.js r128, bundled for offline use                                             |
-| `assets/`              | Earth texture (`earth-4k.jpg`, plus `earth-texture.js` so it loads from disk)      |
+```
+index.html            page markup
+css/                  base, hero, assistant, projects, detail, work, intro, about, experience,
+                      journey, dashboard, pack, contact, robot  (one file per feature)
+data/                 projects.js, works.js  (your content)
+js/                   one file per feature; main.js starts them in order
+vendor/three.min.js   Three.js, bundled for offline use
+assets/               CV, photo, earth texture
+```
 
-Script order in `index.html` matters: utils and config first, `main.js` last.
+Script order in `index.html` matters: utils and config first, data next, `main.js` last.
 
-## Things to fill in
+## Notes
 
-- `js/config.js`: email, LinkedIn and WhatsApp are filled in from your CV; still to add: GitHub and Instagram (links with `#` are hidden), `cvUrl` points to `assets/Shuvam_Shrestha_CV.pdf` (replace that file when your CV changes), your photo (save it as `assets/photo.jpg`; it is linked in `index.html`, and `photo` in config.js can point elsewhere), `videos` (one YouTube ID per project, in project order).
-- `js/projects.js` and `js/story.js`: project descriptions, problem and approach lines, statuses.
-- `js/journey-globe.js`: add your MBA city, years and other chapters.
-
-## n8n connections (optional)
-
-All empty by default, so everything runs in demo mode:
-
-- `entryUrl`: POST `{name, company, email}` returns `{ok:true}`
-- `photoRequestUrl` / `photoStatusUrl`: Telegram approval flow
-- `jobAgentUrl`: POST `{url, text}` returns `{headline, summary, bullets, matched, gaps}`
-- `n8nUrl`: POST `{text}` returns `{action, target, text}` for the voice assistant
-
-The front-end email check is a convenience, not security. Only return private photo URLs from n8n after you approve.
-
-## About book
-
-The About section is three `<article class="bpage">` blocks inside `#book` in `index.html`. Add another page by copying one article; the page numbers (`1 / 3`) and the book's aria-label are plain text, so update them by hand. Everything else (dots, buttons, count) adapts automatically.
-
-## Experience ropes
-
-The work roles are the `<article class="rcard">` blocks inside `#ropeTrack`. Add or remove one and the scroll length, dots and count adapt automatically; update the "ROLE 1 / 3" labels by hand.
-
-## WhatsApp QR
-
-The QR code in the contact section opens `wa.me/9779860308208` with a short pre-filled message. To change the number, run `pip install segno && python3 tools/make_qr.py <number>` and paste the new SVG into the `.qrtile` span in `index.html`.
+- The floating assistant (bottom-right) is available everywhere after the intro. Escape closes it.
+- The recruiter entry details go to the Google Sheet configured as `scriptUrl`.
+- The front-end checks are conveniences, not security. Return private photo URLs from n8n only after you approve.
