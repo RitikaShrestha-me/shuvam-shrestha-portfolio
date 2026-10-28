@@ -316,7 +316,7 @@ const PROJECTS = [
       "Dashboard",
     ],
     stack: ["n8n", "Google Gemini", "Google Sheets", "Next.js"],
-    video: "",
+    video: "https://drive.google.com/file/d/1o1O3C6kMANAqIIsLZjTSf2Eclvostt5n/preview",
     themes: ["ai", "automation", "data-visualization"],
     story: {
       prob: "Manually collecting and analyzing YouTube trends makes it difficult to monitor content opportunities efficiently.",
